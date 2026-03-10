@@ -29,16 +29,6 @@ Automatically saves text and images to clipboard history, and lets you instantly
 | CMake | 3.16+ |
 | Compiler | GCC / MSVC / MinGW |
 
-### Build Instructions
-
-```bash
-cmake -B build/linux-release -DCMAKE_BUILD_TYPE=Release
-cmake --build build/linux-release --parallel
-./build/linux-release/ClipIyagi
-```
-
----
-
 ## Linux Installation
 
 ### Required Packages
@@ -135,5 +125,8 @@ Tray icon click works normally.
 | Clipboard monitoring | ✅ | |
 | Global hotkey | ✅ | XCB hotkey grab |
 | Auto-paste | ✅ | Requires `xdotool` |
-| System tray | ✅ | |
+| System tray | ✅ | 
+
+License
+GPL-3.0 license
 
