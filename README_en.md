@@ -127,6 +127,6 @@ Tray icon click works normally.
 | Auto-paste | ✅ | Requires `xdotool` |
 | System tray | ✅ | 
 
-License
+## License
 GPL-3.0 license
 
