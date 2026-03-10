@@ -1,132 +1,132 @@
-# ClipIyagi
+# ClipIyagi (클립이야기)
 
-> Clipboard History Manager — Windows / Linux (GNOME) Support
+Lightweight **clipboard history manager** for Windows and Linux.
 
-Automatically saves text and images to clipboard history, and lets you instantly browse and paste with a single shortcut.
-
----
-
-## Features
-
-- **Auto-save clipboard** — Records both text and images
-- **Global hotkey** — Open from anywhere with `Ctrl+Shift+V` or `` Ctrl+` ``
-- **Auto-paste** — Automatically pastes to the previous window upon item selection
-- **Number shortcuts** — Press `1`–`9`, `0` to select items while the list is open
-- **Search** — Real-time search through text content
-- **Image preview** — Hover over a thumbnail to see a full-size popup
-- **Infinite scroll** — Quickly browse large histories
-- **System tray** — Runs in the background
+ClipIyagi automatically saves text and images copied to the clipboard and lets you quickly paste them again using a global shortcut.
 
 ---
 
-## Build
+## ✨ Features
 
-### Requirements
+* **Clipboard history** — automatically stores copied text and images
+* **Global hotkey** — open clipboard list anywhere
+* **Instant paste** — selecting an item automatically pastes into the previous window
+* **Number shortcuts** — press `1–9` or `0` to paste instantly
+* **Search** — real-time text search
+* **Image preview** — hover to see full image
+* **Infinite scroll** — smooth browsing of large histories
+* **System tray integration**
 
-| Item | Version |
-|------|---------|
-| Qt | 6.x (Core, Widgets, Gui, DBus) |
-| CMake | 3.16+ |
-| Compiler | GCC / MSVC / MinGW |
+---
 
-## Linux Installation
+## ⚡ Quick Start (Linux)
 
-### Required Packages
+Download the Linux binary and run:
 
 ```bash
-sudo apt install ydotool wl-clipboard xdotool
+chmod +x clipiyagi
+./clipiyagi
 ```
 
-| Package | Purpose |
-|---------|---------|
-| `ydotool` | Auto-paste on Wayland (sends Ctrl+V) |
-| `wl-clipboard` | Clipboard persistence on Wayland (`wl-copy`) |
-| `xdotool` | Auto-paste on X11 sessions |
+---
 
-> **Fedora / Arch**: Install the same package names using `dnf` / `pacman`.
+## 🖥 Platforms
+
+Supported platforms:
+
+* Windows
+* Linux (GNOME / X11)
 
 ---
 
-### Wayland (GNOME) — Additional Setup for Auto-Paste
+## ⬇ Download
 
-ydotool operates at the kernel input level, so you need to **add yourself to the input group and re-login**.
+### Linux
+
+Download the binary from GitHub Releases.
+
+After downloading:
 
 ```bash
-# 1. Add user to input group (one-time setup)
-sudo usermod -a -G input $USER
+chmod +x clipiyagi
+./clipiyagi
+```
 
-# 2. After re-login, start the ydotoold daemon
+---
+
+### Windows
+
+Install from Microsoft Store.
+
+(스토어 링크 추가 예정)
+
+---
+
+## 🎮 Keyboard Shortcuts
+
+| Key              | Function                    |
+| ---------------- | --------------------------- |
+| Ctrl + Shift + V | Open clipboard list         |
+| Ctrl + `         | Open clipboard list         |
+| 1–9 / 0          | Paste selected history item |
+| ESC              | Close list                  |
+
+---
+
+## 🐧 Linux Notes
+
+Some clipboard automation features require additional tools depending on the session type.
+
+### Wayland (GNOME)
+
+Install required tools:
+
+```bash
+sudo apt install ydotool wl-clipboard
+```
+
+Run the ydotool daemon:
+
+```bash
 ydotoold &
 ```
 
-> To keep auto-paste working after reboot, run `ydotoold &` each session
-> or add it to `~/.bashrc`.
+### X11
+
+Install:
+
+```bash
+sudo apt install xdotool
+```
 
 ---
 
-### Global Hotkey (GNOME Wayland)
+## 📌 Notes
 
-On GNOME Wayland, a **gsettings custom shortcut** is automatically registered at launch.
-You can use `Ctrl+Shift+V` (or the shortcut selected in the tray) without any manual setup.
-
-How it works:
-1. Hotkey → launches a second ClipIyagi instance
-2. The new instance sends a Toggle signal via D-Bus to the running first instance
-3. Window toggles
+* Runs in the system tray
+* Automatically stores clipboard history
+* Settings are saved automatically
+* Supports both text and images
 
 ---
 
-## Platform Support
+## 👤 Author
 
-### ✅ Windows
-
-| Feature | Status |
-|---------|--------|
-| Clipboard monitoring | ✅ |
-| Global hotkey | ✅ (`Ctrl+Shift+V` / `` Ctrl+` ``) |
-| Auto-paste | ✅ |
-| System tray | ✅ |
-| Auto-start | ✅ (Registry) |
+IYAGI INC
+Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
+GitHub: https://github.com/iyagicom
 
 ---
 
-### ✅ Linux — GNOME Wayland (Ubuntu 22.04+)
+## 📜 License
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Clipboard monitoring | ✅ | |
-| Global hotkey | ✅ | Auto-registered via gsettings |
-| Auto-paste | ✅ | Requires `ydotool` + `wl-copy` |
-| System tray | ✅ | XCB XEMBED (raw) |
-| Auto-start | ⚠️ | Manual registration required |
+Copyright (c) 2026 IYAGI INC
 
-#### ⚠️ What does NOT work on GNOME Wayland
+All rights reserved.
 
-| Tool | Reason |
-|------|--------|
-| `xdotool` | No `_NET_ACTIVE_WINDOW` support — cannot detect active window |
-| `wtype` | GNOME does not support `zwp_virtual_keyboard_v1` protocol |
+This software is provided as **executable files only**.
+The source code is not publicly available.
 
-→ Auto-paste requires `ydotool` + the `ydotoold` daemon.
+You may use this software for personal and non-commercial purposes.
 
----
-
-### ⚠️ Linux — KDE / Other Wayland Compositors
-
-Global hotkeys may not work (registration uses the GNOME gsettings method).
-Tray icon click works normally.
-
----
-
-### ✅ Linux — X11 Session
-
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Clipboard monitoring | ✅ | |
-| Global hotkey | ✅ | XCB hotkey grab |
-| Auto-paste | ✅ | Requires `xdotool` |
-| System tray | ✅ | 
-
-## License
-GPL-3.0 license
-
+Redistribution, modification, or reverse engineering is prohibited without explicit written permission from the author.
