@@ -1,99 +1,95 @@
-# ClipIyagi (클립이야기)
+# ClipIyagi v1.7.0
 
-Lightweight **clipboard history manager** for Windows and Linux.
+A **lightweight, fast clipboard history manager** for Windows and Linux.
 
-ClipIyagi automatically saves text and images copied to the clipboard and lets you quickly paste them again using a global shortcut.
+ClipIyagi automatically saves everything you copy and lets you quickly paste it back with a global shortcut — no matter which app you're in.
 
 ---
 
 ## ✨ Features
 
-* **Clipboard history** — automatically stores copied text and images
-* **Global hotkey** — open clipboard list anywhere
-* **Instant paste** — selecting an item automatically pastes into the previous window
-* **Number shortcuts** — press `1–9` or `0` to paste instantly
-* **Search** — real-time text search
-* **Image preview** — hover to see full image
-* **Infinite scroll** — smooth browsing of large histories
-* **System tray integration**
+### Clipboard Management
+* **Auto-save** — automatically records copied text and images
+* **Pin items** — pin important clips to the top of the list (excluded from auto-cleanup)
+* **Edit items** — edit saved text content directly
+* **Tags / Categories** — assign tags to items and filter with `#tagname`
+* **Max history size** — choose 100 / 300 / 500 / 1000 / Unlimited
 
----
+### Productivity
+* **Global hotkey** — open the clipboard list from anywhere (`Ctrl+Shift+V` or `Ctrl+\``)
+* **Auto-paste** — automatically pastes into the previously focused window on selection
+* **Paste shortcut choice** — `Ctrl+V` (standard) or `Ctrl+Shift+V` (works in terminals too)
+* **Number shortcuts** — press `1–9` or `0` to instantly paste that item
+* **Real-time search** — filter clipboard history as you type
+* **Image preview** — hover over a thumbnail to see the full image
+* **Infinite scroll** — smoothly browse large histories
+* **Resizable window** — drag to resize to your preferred size
 
-## ⚡ Quick Start (Linux)
+### Appearance
+* **Dark mode** — toggle between light and dark themes
+* **Font size** — choose 9 / 10 / 12 / 14pt
 
-Download the Linux binary and run:
-
-```bash
-chmod +x clipiyagi
-./clipiyagi
-```
-
----
-
-## 🖥 Platforms
-
-Supported platforms:
-
-* Windows
-* Linux (GNOME / X11)
-
----
-
-## ⬇ Download
-
-### Linux
-
-Download the binary from GitHub Releases.
-
-After downloading:
-
-```bash
-chmod +x clipiyagi
-./clipiyagi
-```
-
----
-
-### Windows
-
-Install from Microsoft Store.
-
-(스토어 링크 추가 예정)
+### System
+* **System tray** — always accessible from the tray icon
+* **Autostart** — launch automatically on login
 
 ---
 
 ## 🎮 Keyboard Shortcuts
 
-| Key              | Function                    |
-| ---------------- | --------------------------- |
-| Ctrl + Shift + V | Open clipboard list         |
-| Ctrl + `         | Open clipboard list         |
-| 1–9 / 0          | Paste selected history item |
-| ESC              | Close list                  |
+| Key | Action |
+|---|---|
+| Ctrl + Shift + V | Open clipboard list |
+| Ctrl + ` | Open clipboard list |
+| 1 – 9 / 0 | Instantly paste that numbered item |
+| ESC | Close list / clear search |
+| Right-click | Pin · Edit · Tag · Delete menu |
 
 ---
 
-## 🐧 Linux Notes
+## ⬇ Download
 
-Some clipboard automation features require additional tools depending on the session type.
+### Windows
+Install from the Microsoft Store.
+(Store link coming soon)
 
-### Wayland (GNOME)
-
-Install required tools:
+### Linux
+Download the binary from GitHub Releases.
 
 ```bash
-sudo apt install ydotool wl-clipboard
+chmod +x ClipIyagi
+./ClipIyagi
 ```
 
-Run the ydotool daemon:
+---
+
+## 🐧 Linux Setup
+
+### Wayland (GNOME) — for auto-paste support
 
 ```bash
-ydotoold &
+# Install packages
+sudo apt install ydotool wl-clipboard
+
+# Fix uinput permissions (once)
+echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d/60-uinput.rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+
+# Register ydotoold as a user service (recommended)
+mkdir -p ~/.config/systemd/user
+cat > ~/.config/systemd/user/ydotoold.service << 'EOF'
+[Unit]
+Description=ydotool daemon
+[Service]
+ExecStart=/usr/bin/ydotoold
+Restart=always
+[Install]
+WantedBy=default.target
+EOF
+systemctl --user enable --now ydotoold.service
 ```
 
 ### X11
-
-Install:
 
 ```bash
 sudo apt install xdotool
@@ -101,12 +97,10 @@ sudo apt install xdotool
 
 ---
 
-## 📌 Notes
+## 🖥 Supported Platforms
 
-* Runs in the system tray
-* Automatically stores clipboard history
-* Settings are saved automatically
-* Supports both text and images
+* Windows 10 / 11
+* Linux (GNOME Wayland / X11)
 
 ---
 
@@ -120,13 +114,9 @@ GitHub: https://github.com/iyagicom
 
 ## 📜 License
 
-Copyright (c) 2026 IYAGI INC
+Copyright (c) 2026 IYAGI INC. All rights reserved.
 
-All rights reserved.
-
-This software is provided as **executable files only**.
-The source code is not publicly available.
+This software is provided as **executable files only**. Source code is not publicly available.
 
 You may use this software for personal and non-commercial purposes.
-
 Redistribution, modification, or reverse engineering is prohibited without explicit written permission from the author.
