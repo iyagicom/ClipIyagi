@@ -1,4 +1,5 @@
 # ClipIyagi(클립이야기) v1.7.0
+![ScreenDrawIyagi](screendrawiyagi.png)
 
 A **lightweight, fast clipboard history manager** for Windows and Linux.
 
