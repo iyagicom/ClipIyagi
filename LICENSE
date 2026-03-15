@@ -1,9 +1,60 @@
-Copyright (c) 2026 [IYAGI INC]
+IYAGI SOFTWARE LICENSE AGREEMENT
 
+Copyright (c) 2026 IYAGI INC
 All rights reserved.
 
-This software is provided as executable files only. 
-The source code is not available to the public. 
-You may use this software for personal and non-commercial purposes. 
-Redistribution, modification, or reverse engineering is prohibited 
-without explicit written permission from the author.
+This software is distributed as executable files only.
+The source code is not publicly available.
+
+---
+
+1. PERSONAL USE
+
+The Linux version of this software may be used free of charge for personal and commercial purposes.
+
+---
+
+2. WINDOWS VERSION
+
+The Windows version is available as a paid application via the Microsoft Store.
+
+For company-wide deployment, offline installation, or volume licensing,
+a commercial license is required.
+
+---
+
+3. COMMERCIAL LICENSING
+
+Commercial licensing options for Windows:
+
+* Single PC License: USD $12
+* 10 PCs Volume License: USD $80
+* Unlimited Company License: USD $150
+
+Custom licensing options may be available for large-scale deployments.
+
+---
+
+4. RESTRICTIONS
+
+You may not:
+
+* Redistribute the software without permission
+* Modify or reverse engineer the software
+* Resell or sublicense the software
+
+---
+
+5. NO WARRANTY
+
+This software is provided "as is", without warranty of any kind.
+The author shall not be liable for any damages arising from the use of this software.
+
+---
+
+6. CONTACT
+
+For commercial licensing inquiries:
+
+IYAGI INC
+Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
