@@ -1,65 +1,96 @@
-IYAGI SOFTWARE LICENSE AGREEMENT
+IYAGI SOFTWARE SERIES LICENSE
 
-Copyright (c) 2026 IYAGI INC
+Copyright (c) 2026 IYAGI INC.
 All rights reserved.
 
-This software is distributed as executable files only.
-The source code is not publicly available.
+This license applies to all current and future software
+products published under the Iyagi brand, including but not limited to:
+
+• PanelIyagi
+• FileIyagi
+• SendIyagi
+• ClipIyagi
+• ScreendrawIyagi
+• Any future Iyagi series products
+
+These applications are proprietary software distributed
+in binary form.
 
 ---
 
-1. PERSONAL USE
+1. FREE USAGE
 
-The software may be used free of charge for personal and non-commercial purposes.
+Iyagi software may be used free of charge for any purpose,
+including personal, commercial, educational, governmental,
+and organizational use.
 
----
-
-2. LINUX VERSION
-
-The Linux version of this software is free for both personal and commercial use.
+No payment or commercial agreement is required.
 
 ---
 
-3. WINDOWS COMMERCIAL USE
+2. WINDOWS AND MS STORE
 
-A commercial license is required for business or organizational use of the Windows version.
+For Windows versions of Iyagi software:
 
-Commercial licensing options:
-
-* Single PC License: USD $12
-* 10 PCs Volume License: USD $80
-* Unlimited Company License: USD $150
-
-Custom licensing options may be available for large-scale deployments.
+• Only IYAGI INC is permitted to distribute via Microsoft Store
+• Redistribution of unmodified Windows binaries by third parties is prohibited
 
 ---
 
-4. RESTRICTIONS
+3. LINUX AND OPEN DISTRIBUTION
+
+For Linux versions of Iyagi software:
+
+• Redistribution of original, unmodified binaries is permitted worldwide
+• Distribution is allowed through Linux distribution repositories,
+Ubuntu Software Center, GNOME Software, Snap Store, Flatpak, AppImage,
+websites, GitHub Releases, enterprise systems, and physical media
+• Third parties may repackage, create installers, or bundle software
+provided the proprietary binaries remain unmodified
+• Future Iyagi series products automatically inherit this redistribution right
+
+---
+
+4. PROPRIETARY RESTRICTIONS
 
 You may not:
 
-* Redistribute the software without permission
-* Modify or reverse engineer the software
-* Resell or sublicense the software
+• Modify proprietary binaries
+• Reverse engineer, decompile, or disassemble
+• Attempt to reconstruct source code
+• Redistribute modified proprietary binaries
 
 ---
 
-5. NO WARRANTY
+5. OPEN SOURCE COMPONENTS
 
-This software is provided "as is", without warranty of any kind.
-The author shall not be liable for any damages arising from the use of this software.
+Some Iyagi software products may include or distribute
+separate open-source components.
+
+Such components follow their own licenses and do not affect
+the proprietary core.
 
 ---
 
-6. COMMERCIAL LICENSE REQUEST
+6. TRADEMARK
 
-To obtain a commercial license, please contact:
+The Iyagi name and product names may be used to identify
+original software.
+
+Modified or unofficial builds must not imply official endorsement.
+
+---
+
+7. DISCLAIMER
+
+All Iyagi software is provided "as is" without warranty.
+
+The author shall not be liable for any damages arising
+from use of the software.
+
+---
+
+8. CONTACT
 
 IYAGI INC
 Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
-
-Please include:
-
-* Company name
-* Number of users or PCs
-* Intended usage environment
