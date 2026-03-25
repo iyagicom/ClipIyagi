@@ -6,7 +6,6 @@ All rights reserved.
 This license applies to all current and future software
 products published under the Iyagi brand, including but not limited to:
 
-• PanelIyagi
 • FileIyagi
 • SendIyagi
 • ClipIyagi
@@ -21,10 +20,8 @@ in binary form.
 1. FREE USAGE
 
 Iyagi software may be used free of charge for any purpose,
-including personal, commercial, educational, governmental,
-and organizational use.
-
-No payment or commercial agreement is required.
+including personal, commercial, educational,
+governmental, and organizational use.
 
 ---
 
@@ -33,7 +30,7 @@ No payment or commercial agreement is required.
 For Windows versions of Iyagi software:
 
 • Only IYAGI INC is permitted to distribute via Microsoft Store
-• Redistribution of unmodified Windows binaries by third parties is prohibited
+• Redistribution of Windows binaries by third parties is prohibited
 
 ---
 
@@ -41,47 +38,32 @@ For Windows versions of Iyagi software:
 
 For Linux versions of Iyagi software:
 
-• Redistribution of original, unmodified binaries is permitted worldwide
+• Redistribution of original Iyagi binaries is permitted worldwide
 • Distribution is allowed through Linux distribution repositories,
-Ubuntu Software Center, GNOME Software, Snap Store, Flatpak, AppImage,
-websites, GitHub Releases, enterprise systems, and physical media
-• Third parties may repackage, create installers, or bundle software
-provided the proprietary binaries remain unmodified
+Ubuntu Software Center, Snap Store, Flatpak, AppImage, websites,
+GitHub Releases, enterprise systems, ISO images, and physical media
+• Third parties may create packages, installers, or bundles
+provided the binaries are distributed as-is
 • Future Iyagi series products automatically inherit this redistribution right
 
 ---
 
-4. PROPRIETARY RESTRICTIONS
+4. OPEN SOURCE COMPONENTS
 
-You may not:
-
-• Modify proprietary binaries
-• Reverse engineer, decompile, or disassemble
-• Attempt to reconstruct source code
-• Redistribute modified proprietary binaries
+Some Iyagi products may include separate open-source components,
+which follow their own licenses and do not affect the proprietary core.
 
 ---
 
-5. OPEN SOURCE COMPONENTS
+5. TRADEMARK
 
-Some Iyagi software products may include or distribute
-separate open-source components.
-
-Such components follow their own licenses and do not affect
-the proprietary core.
-
----
-
-6. TRADEMARK
-
-The Iyagi name and product names may be used to identify
-original software.
+The Iyagi name and product names may be used to identify original software.
 
 Modified or unofficial builds must not imply official endorsement.
 
 ---
 
-7. DISCLAIMER
+6. DISCLAIMER
 
 All Iyagi software is provided "as is" without warranty.
 
@@ -90,7 +72,7 @@ from use of the software.
 
 ---
 
-8. CONTACT
+7. CONTACT
 
 IYAGI INC
 Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
