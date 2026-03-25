@@ -1,23 +1,19 @@
-Privacy Policy for ClipIyagi
-Last updated: February 26, 2026
+# Privacy Policy for ScreenDrawing
 
-Overview
-ClipIyagi is a clipboard manager that allows users to save and manage clipboard history such as images and text.
+**Last updated: February 26, 2026**
 
-Data Collection
-ClipIyagi does not collect, store, or transmit any personal data to external servers.
-All clipboard history is stored locally on the user's device using a local database.
+## Overview
+ScreenDrawing is a screen annotation tool that allows users to draw and annotate directly on their screen.
 
-Local Data Storage
-Clipboard content such as text or images may be stored locally on the user's device to provide clipboard history functionality. This data never leaves the device.
+## Data Collection
+ScreenDrawing does **not** collect, store, or transmit any personal data. The app runs entirely on your local device.
 
-No Internet Connection Required
-ClipIyagi does not require an internet connection and does not send any data to external servers.
+## No Internet Connection Required
+ScreenDrawing does not connect to the internet and does not send any data to external servers.
 
-Contact
+## Contact
 If you have any questions about this privacy policy, please contact us at:
-
 iyagicom@gmail.com
 
-Developer: Jeong SeongYong  
-Company: IYAGI INC
+**Developer:** Jeong SeongYong  
+**Company:** IYAGI INC
