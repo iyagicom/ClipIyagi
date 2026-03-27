@@ -114,10 +114,12 @@ GitHub: https://github.com/iyagicom
 ---
 
 ## 📜 License
-
 Copyright (c) 2026 IYAGI INC. All rights reserved.
 
-This software is provided as **executable files only**. Source code is not publicly available.
+This software is provided as executable files only. Source code is not publicly available.
 
-You may use this software for personal and non-commercial purposes.
-Redistribution, modification, or reverse engineering is prohibited without explicit written permission from the author.
+Linux version:
+You may use, install, package, and redistribute this software freely for any purpose, including personal, commercial, educational, governmental, and organizational use.
+
+Windows version:
+Distributed through the Microsoft Store. Usage and licensing are managed through the MS Store.
