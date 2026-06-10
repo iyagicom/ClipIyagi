@@ -1,124 +1,114 @@
-# PDFIyagi v1.17.0
+# ClipIyagi
 
-![PDFIyagi](pdfiyagi.png)
-
-Windows 및 Linux용 **가볍고 빠른 PDF 편집기**입니다.
-
-PDFIyagi는 PDF 텍스트 수정, 새 텍스트 추가, 도장 이미지 삽입, 개인정보 마킹, 페이지 관리 및 저장 기능을 제공하며, 저장 후에도 다시 편집할 수 있습니다.
+복사한 내용을 자동으로 저장하고 언제든 꺼내 쓸 수 있는 클립보드 히스토리 관리자입니다.  
+Windows와 Linux를 지원합니다.
 
 ---
 
-## ✨ 주요 기능
+## 주요 기능
 
-### PDF 편집
-
-* **텍스트 편집** — 기존 PDF 텍스트를 직접 수정
-* **재편집 지원** — 저장 후 다시 열어도 텍스트 재편집 가능
-* **텍스트 서식** — 굵게, 기울임, 밑줄, 취소선 지원
-* **글자 색상** — 원하는 텍스트 색상 선택 가능
-* **L-Edit 모드** — 문단 형태의 줄 단위 편집
-* **Edit 모드** — 양식 및 문서용 필드 단위 편집
-
-### 이미지 PDF 지원
-
-* **스캔 PDF 텍스트 추가** — 이미지 기반 PDF에 새 텍스트 입력
-* **도장 이미지 삽입** — 서명, 직인, 도장 이미지 자유 배치
-* **이미지 위 텍스트** — 이미지 위에 텍스트 입력 가능
-* **클립보드 이미지 붙여넣기** — 복사한 이미지를 바로 삽입
-* **이미지 재편집 지원** — 저장 후 다시 열어도 이동 및 편집 가능
-
-### 마킹 및 보안
-
-* **블랙박스 마킹** — 민감한 정보 영구 삭제
-* **블러 마킹** — 선택 영역 흐림 처리
-
-### 생산성
-
-* **실행취소 / 다시실행** — Ctrl+Z, Ctrl+Y 지원
-* **Ctrl+드래그 복사** — 텍스트 및 이미지 객체 복제
-* **텍스트 추출** — 현재 페이지 또는 전체 문서 텍스트 추출
-* **전체 폰트 변경** — 문서 전체 글꼴 일괄 변경
-* **페이지 관리** — 페이지 순서 변경 및 빈 페이지 삽입
-* **썸네일 탐색** — 썸네일을 이용한 빠른 페이지 이동
-
-### 보기 엔진
-
-* **타입 1** — 빠름
-* **타입 2** — 정확함
-* **타입 3** — 최고 품질 (권장)
+- **자동 저장** — 복사한 텍스트와 이미지를 모두 자동으로 기록합니다
+- **전역 단축키** — 어떤 앱에서든 단축키 하나로 목록을 즉시 엽니다
+- **자동 붙여넣기** — 항목을 선택하면 이전 창에 자동으로 붙여넣어집니다
+- **숫자 단축키** — 1~9, 0 키로 클릭 없이 즉시 붙여넣기
+- **핀 고정** — 자주 쓰는 항목을 상단에 고정, 자동 정리에서 제외
+- **항목 편집** — 저장된 텍스트를 붙여넣기 전에 직접 수정
+- **태그 / 검색** — 태그 설정 후 #태그명으로 필터링, 실시간 검색
+- **이미지 지원** — 이미지 저장 및 호버 시 미리보기
+- **다크 모드** — 라이트 / 다크 테마 전환
+- **시스템 트레이** — 백그라운드 상주, 트레이 아이콘으로 항상 접근
 
 ---
 
-## 🎮 단축키
-
-| 키                | 기능              |
-| ---------------- | --------------- |
-| Ctrl + O         | PDF 열기          |
-| Ctrl + S         | PDF 저장          |
-| Ctrl + Shift + S | 다른 이름으로 저장      |
-| Ctrl + B         | 빈 페이지 삽입        |
-| Ctrl + I         | 이미지 삽입          |
-| Ctrl + V         | 클립보드 이미지 붙여넣기   |
-| Ctrl + Z         | 실행취소            |
-| Ctrl + Y         | 다시실행            |
-| Delete           | 선택 객체 삭제        |
-| Ctrl + T         | 현재 페이지 텍스트 추출   |
-| Ctrl + Shift + T | 전체 문서 텍스트 추출    |
-| Ctrl + Shift + F | 전체 문서 폰트 변경     |
-| Ctrl + 마우스 휠     | 확대 / 축소         |
-| ← / →            | 이전 페이지 / 다음 페이지 |
-| 방향키              | 선택 객체 1픽셀 이동    |
-| Shift + 방향키      | 선택 객체 10픽셀 이동   |
-| Ctrl + 드래그       | 텍스트 또는 이미지 복사   |
-
----
-
-## ⬇ 다운로드
+## 설치
 
 ### Windows
 
-Microsoft Store에서 설치할 수 있습니다.
+Microsoft Store에서 설치하거나 GitHub Releases에서 설치 파일(.exe)을 받아 실행합니다.
 
-### Linux
+### Linux (Ubuntu / Debian 계열)
 
-GitHub Releases에서 최신 버전을 다운로드할 수 있습니다.
-
+**.deb 패키지 설치 (권장)**
 ```bash
-chmod +x PDFIyagi
-./PDFIyagi
+sudo dpkg -i clipiyagi_버전_amd64.deb
+```
+
+**자동 붙여넣기 사용 시 추가 설정**
+
+Wayland (GNOME):
+```bash
+sudo apt install ydotool wl-clipboard
+
+# uinput 권한 설정 (최초 1회)
+echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d/60-uinput.rules
+sudo udevadm control --reload-rules && sudo udevadm trigger
+
+# ydotoold 자동시작 등록
+mkdir -p ~/.config/systemd/user
+cat > ~/.config/systemd/user/ydotoold.service << 'EOF'
+[Unit]
+Description=ydotool daemon
+[Service]
+ExecStart=/usr/bin/ydotoold
+Restart=always
+[Install]
+WantedBy=default.target
+EOF
+systemctl --user enable --now ydotoold.service
+```
+
+X11:
+```bash
+sudo apt install xdotool
 ```
 
 ---
 
-## 🖥 지원 플랫폼
+## 사용법
 
-* Windows 10 / 11
-* Linux (Ubuntu, Debian 및 호환 배포판)
-
----
-
-## 👤 제작
-
-IYAGI INC
-
-Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
-
-GitHub: https://github.com/iyagicom
+1. 설치 후 실행하면 시스템 트레이에 아이콘이 생깁니다
+2. 평소대로 텍스트나 이미지를 복사하면 자동으로 저장됩니다
+3. **Ctrl+Shift+V** 또는 **Ctrl+`** 를 누르면 목록이 열립니다
+4. 원하는 항목을 클릭하거나 숫자 키를 누르면 즉시 붙여넣어집니다
 
 ---
 
-## 📜 라이선스
+## 단축키
 
-Copyright (c) 2026 IYAGI INC. All rights reserved.
+| 키 | 동작 |
+|----|------|
+| `Ctrl+Shift+V` | 클립보드 목록 열기 |
+| `Ctrl+`` ` | 클립보드 목록 열기 |
+| `1` ~ `9` / `0` | 해당 번호 항목 즉시 붙여넣기 |
+| `ESC` | 목록 닫기 / 검색어 지우기 |
+| 우클릭 | 핀 고정 · 편집 · 태그 · 삭제 메뉴 |
 
-본 소프트웨어는 실행 파일 형태로만 배포됩니다. 소스 코드는 공개되지 않습니다.
+---
 
-### Linux 버전
+## 지원 환경
 
-개인, 상업, 교육, 정부, 기관 등 모든 용도로 자유롭게 사용, 설치, 패키징 및 재배포할 수 있습니다.
+- Windows 10 / 11
+- Linux — GNOME Wayland, X11
 
-### Windows 버전
+---
 
-Microsoft Store를 통해 배포됩니다.
+## 다운로드
 
-사용 및 라이선스 정책은 Microsoft Store 정책을 따릅니다.
+[GitHub Releases](https://github.com/iyagicom/ClipIyagi-dev/releases) 에서 최신 버전을 받을 수 있습니다.
+
+---
+
+## 라이선스
+
+Copyright © 2026 IYAGI INC. All rights reserved.
+
+실행 파일로만 배포됩니다. 소스 코드는 공개하지 않습니다.  
+개인 및 상업적 사용은 자유롭게 허용됩니다.  
+무단 재배포, 수정, 역공학은 금지됩니다.
+
+---
+
+## 문의
+
+- Email: iyagicom@gmail.com
+- GitHub: https://github.com/iyagicom
