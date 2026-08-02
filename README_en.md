@@ -1,124 +1,101 @@
-# ClipIyagi v1.7.0
+# ClipIyagi
 
-A **lightweight, fast clipboard history manager** for Windows and Linux.
-
-ClipIyagi automatically saves everything you copy and lets you quickly paste it back with a global shortcut — no matter which app you're in.
-
----
-
-## ✨ Features
-
-### Clipboard Management
-* **Auto-save** — automatically records copied text and images
-* **Pin items** — pin important clips to the top of the list (excluded from auto-cleanup)
-* **Edit items** — edit saved text content directly
-* **Tags / Categories** — assign tags to items and filter with `#tagname`
-* **Max history size** — choose 100 / 300 / 500 / 1000 / Unlimited
-
-### Productivity
-* **Global hotkey** — open the clipboard list from anywhere (`Ctrl+Shift+V` or `Ctrl+\``)
-* **Auto-paste** — automatically pastes into the previously focused window on selection
-* **Paste shortcut choice** — `Ctrl+V` (standard) or `Ctrl+Shift+V` (works in terminals too)
-* **Number shortcuts** — press `1–9` or `0` to instantly paste that item
-* **Real-time search** — filter clipboard history as you type
-* **Image preview** — hover over a thumbnail to see the full image
-* **Infinite scroll** — smoothly browse large histories
-* **Resizable window** — drag to resize to your preferred size
-
-### Appearance
-* **Dark mode** — toggle between light and dark themes
-* **Font size** — choose 9 / 10 / 12 / 14pt
-
-### System
-* **System tray** — always accessible from the tray icon
-* **Autostart** — launch automatically on login
+A clipboard history manager that automatically saves copied content and lets you reuse it anytime.
+Supports both Windows and Linux.
 
 ---
 
-## 🎮 Keyboard Shortcuts
+## Features
 
-| Key | Action |
-|---|---|
-| Ctrl + Shift + V | Open clipboard list |
-| Ctrl + ` | Open clipboard list |
-| 1 – 9 / 0 | Instantly paste that numbered item |
-| ESC | Close list / clear search |
-| Right-click | Pin · Edit · Tag · Delete menu |
+* **Automatic Saving** — Automatically records copied text and images
+* **Global Hotkeys** — Instantly open the clipboard list from any application with a single shortcut
+* **Auto Paste** — Selecting an item automatically pastes it into the previous active window
+* **Number Shortcuts** — Instantly paste items using `1-9` and `0` keys without clicking
+* **Pin Favorites** — Keep frequently used items at the top and exclude them from automatic cleanup
+* **Item Editing** — Edit saved text before pasting
+* **Tags / Search** — Add tags, filter with `#tagname`, and search instantly
+* **Image Support** — Save images and preview them on hover
+* **Dark Mode** — Switch between light and dark themes
+* **System Tray** — Runs in the background and is always accessible from the tray icon
 
 ---
 
-## ⬇ Download
+## Installation
 
 ### Windows
-Install from the Microsoft Store.
-(Store link coming soon)
 
-### Linux
-Download the binary from GitHub Releases.
+Install from the Microsoft Store or download the installer (`.exe`) from GitHub Releases.
 
-```bash
-chmod +x ClipIyagi
-./ClipIyagi
-```
+### Linux (Ubuntu / Debian-based)
 
----
-
-## 🐧 Linux Setup
-
-### Wayland (GNOME) — for auto-paste support
+**Install using the `.deb` package (recommended)**
 
 ```bash
-# Install packages
-sudo apt install ydotool wl-clipboard
-
-# Fix uinput permissions (once)
-echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d/60-uinput.rules
-sudo udevadm control --reload-rules && sudo udevadm trigger
-
-# Register ydotoold as a user service (recommended)
-mkdir -p ~/.config/systemd/user
-cat > ~/.config/systemd/user/ydotoold.service << 'EOF'
-[Unit]
-Description=ydotool daemon
-[Service]
-ExecStart=/usr/bin/ydotoold
-Restart=always
-[Install]
-WantedBy=default.target
-EOF
-systemctl --user enable --now ydotoold.service
+sudo dpkg -i clipiyagi_version_amd64.deb
 ```
 
-### X11
+**Additional setup for automatic paste**
+
+ClipIyagi runs internally in X11 (XWayland) mode even on GNOME Wayland sessions.
+Therefore, automatic paste works across desktop environments by installing only `xdotool`.
 
 ```bash
 sudo apt install xdotool
 ```
 
+> No `ydotool`, `wl-clipboard`, or uinput permission configuration is required.
+> ClipIyagi is designed to always run through XWayland instead of native Wayland mode, allowing it to track the previous window and send paste keystrokes using only `xdotool`.
+> No additional permissions or background daemon setup are needed.
+
 ---
 
-## 🖥 Supported Platforms
+## How to Use
+
+1. After installation, launch ClipIyagi and its icon will appear in the system tray
+2. Copy text or images normally — ClipIyagi automatically saves them
+3. Press **Ctrl+Shift+V** or **Ctrl+`** to open the clipboard history
+4. Click an item or press a number key to paste it instantly
+
+---
+
+## Shortcuts
+
+| Key             | Action                                 |
+| --------------- | -------------------------------------- |
+| `Ctrl+Shift+V`  | Open clipboard history                 |
+| `Ctrl+`` `      | Open clipboard history                 |
+| `1` ~ `9` / `0` | Instantly paste the corresponding item |
+| `ESC`           | Close list / clear search              |
+| Right-click     | Pin · Edit · Add Tag · Delete menu     |
+
+---
+
+## Supported Environments
 
 * Windows 10 / 11
-* Linux (GNOME Wayland / X11)
+* Linux — GNOME Wayland, X11
 
 ---
 
-## 👤 Author
+## Download
 
-IYAGI INC
-Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
-GitHub: https://github.com/iyagicom
+Download the latest version from:
+
+https://github.com/iyagicom/ClipIyagi-dev/releases
 
 ---
 
-## 📜 License
-Copyright (c) 2026 IYAGI INC. All rights reserved.
+## License
 
-This software is provided as executable files only. Source code is not publicly available.
+Copyright © 2026 IYAGI INC. All rights reserved.
 
-Linux version:
-You may use, install, package, and redistribute this software freely for any purpose, including personal, commercial, educational, governmental, and organizational use.
+Distributed as executable files only. Source code is not publicly available.
+Personal and commercial use is freely permitted.
+Unauthorized redistribution, modification, or reverse engineering is prohibited.
 
-Windows version:
-Distributed through the Microsoft Store. Usage and licensing are managed through the MS Store.
+---
+
+## Contact
+
+* Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
+* GitHub: https://github.com/iyagicom
