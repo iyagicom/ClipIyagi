@@ -35,32 +35,16 @@ sudo dpkg -i clipiyagi_버전_amd64.deb
 
 **자동 붙여넣기 사용 시 추가 설정**
 
-Wayland (GNOME):
-```bash
-sudo apt install ydotool wl-clipboard
+ClipIyagi는 GNOME Wayland 세션에서도 내부적으로 X11(XWayland) 모드로 동작합니다.
+그래서 데스크톱 환경과 관계없이 `xdotool` 하나만 설치하면 자동 붙여넣기가 작동합니다.
 
-# uinput 권한 설정 (최초 1회)
-echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d/60-uinput.rules
-sudo udevadm control --reload-rules && sudo udevadm trigger
-
-# ydotoold 자동시작 등록
-mkdir -p ~/.config/systemd/user
-cat > ~/.config/systemd/user/ydotoold.service << 'EOF'
-[Unit]
-Description=ydotool daemon
-[Service]
-ExecStart=/usr/bin/ydotoold
-Restart=always
-[Install]
-WantedBy=default.target
-EOF
-systemctl --user enable --now ydotoold.service
-```
-
-X11:
 ```bash
 sudo apt install xdotool
 ```
+
+> `ydotool` / `wl-clipboard` / uinput 권한 설정은 필요하지 않습니다.
+> Wayland 네이티브 모드를 쓰지 않고 항상 XWayland로 실행되도록 만들어져 있어서,
+> 별도 권한 설정이나 데몬 등록 없이 `xdotool`만으로 이전 창을 추적하고 붙여넣기 키를 전송합니다.
 
 ---
 
