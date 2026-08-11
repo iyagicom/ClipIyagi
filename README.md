@@ -1,5 +1,5 @@
 # ClipIyagi(클립이야기) v1.7.0
-![ClipIyagi](clipiyagi5.png)
+![ClipIyagi](clipiyagi1.png)
 
 A **lightweight, fast clipboard history manager** for Windows and Linux.
 
