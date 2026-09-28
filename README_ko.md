@@ -1,98 +1,54 @@
-# ClipIyagi
+# 클립이야기 (ClipIyagi)
 
-복사한 내용을 자동으로 저장하고 언제든 꺼내 쓸 수 있는 클립보드 히스토리 관리자입니다.  
-Windows와 Linux를 지원합니다.
+**복사한 것을 다시는 잃어버리지 않습니다. Windows·Linux 클립보드 관리자 — 글자도 이미지도 단축키 하나로.**
 
----
+[English](README.md) · [한국어](README_ko.md)
 
-## 주요 기능
+![ClipIyagi](clipiyagi1.png)
 
-- **자동 저장** — 복사한 텍스트와 이미지를 모두 자동으로 기록합니다
-- **전역 단축키** — 어떤 앱에서든 단축키 하나로 목록을 즉시 엽니다
-- **자동 붙여넣기** — 항목을 선택하면 이전 창에 자동으로 붙여넣어집니다
-- **숫자 단축키** — 1~9, 0 키로 클릭 없이 즉시 붙여넣기
-- **핀 고정** — 자주 쓰는 항목을 상단에 고정, 자동 정리에서 제외
-- **항목 편집** — 저장된 텍스트를 붙여넣기 전에 직접 수정
-- **태그 / 검색** — 태그 설정 후 #태그명으로 필터링, 실시간 검색
-- **이미지 지원** — 이미지 저장 및 호버 시 미리보기
-- **다크 모드** — 라이트 / 다크 테마 전환
-- **시스템 트레이** — 백그라운드 상주, 트레이 아이콘으로 항상 접근
+## 왜 클립이야기인가
 
----
+- **복사한 것은 전부 남습니다.** 글자와 이미지를 저절로 기록합니다. 한 시간 전에 복사한 링크도 다시 꺼냅니다.
+- **어디서든 단축키 하나.** `Ctrl+Shift+V` 를 누르면 하던 작업 위에 목록이 뜨고, `1`~`9` 를 누르면 바로 붙여 넣어집니다.
+- **붙여 넣기까지 해 줍니다.** 항목을 고르면 방금 쓰던 창에 들어갑니다. 터미널에서도 됩니다.
+- **자주 쓰는 것은 위에.** 고정하고, 태그를 달고, `#태그` 로 걸러 보고, 그 자리에서 고칩니다.
+- **Wayland 에서도 따로 깔 것 없이.** GNOME·KDE Plasma 에서는 xdotool·ydotool 없이 자동 붙여넣기가 됩니다.
 
-## 설치
+## 기능
 
-### Windows
+- 글자·이미지 자동 기록(100 / 300 / 500 / 1000 / 무제한)
+- 고정·편집·태그·삭제, 실시간 검색
+- 전역 단축키, 숫자 키로 붙여넣기, 직전 창에 자동 붙여넣기
+- 붙여넣기 키를 `Ctrl+V` / `Ctrl+Shift+V` 중에서 선택
+- 긴 글은 마우스를 올리면 미리보기, 이모지는 컬러로
+- 다크 모드, 글자 크기, 창 크기 조절
+- 시스템 트레이, 로그인 시 자동 시작
 
-Microsoft Store에서 설치하거나 GitHub Releases에서 설치 파일(.exe)을 받아 실행합니다.
-
-### Linux (Ubuntu / Debian 계열)
-
-**.deb 패키지 설치 (권장)**
-```bash
-sudo dpkg -i clipiyagi_버전_amd64.deb
-```
-
-**자동 붙여넣기 사용 시 추가 설정**
-
-ClipIyagi는 GNOME Wayland 세션에서도 내부적으로 X11(XWayland) 모드로 동작합니다.
-그래서 데스크톱 환경과 관계없이 `xdotool` 하나만 설치하면 자동 붙여넣기가 작동합니다.
-
-```bash
-sudo apt install xdotool
-```
-
-> `ydotool` / `wl-clipboard` / uinput 권한 설정은 필요하지 않습니다.
-> Wayland 네이티브 모드를 쓰지 않고 항상 XWayland로 실행되도록 만들어져 있어서,
-> 별도 권한 설정이나 데몬 등록 없이 `xdotool`만으로 이전 창을 추적하고 붙여넣기 키를 전송합니다.
-
----
-
-## 사용법
-
-1. 설치 후 실행하면 시스템 트레이에 아이콘이 생깁니다
-2. 평소대로 텍스트나 이미지를 복사하면 자동으로 저장됩니다
-3. **Ctrl+Shift+V** 또는 **Ctrl+`** 를 누르면 목록이 열립니다
-4. 원하는 항목을 클릭하거나 숫자 키를 누르면 즉시 붙여넣어집니다
-
----
-
-## 단축키
-
-| 키 | 동작 |
-|----|------|
-| `Ctrl+Shift+V` | 클립보드 목록 열기 |
-| `Ctrl+`` ` | 클립보드 목록 열기 |
-| `1` ~ `9` / `0` | 해당 번호 항목 즉시 붙여넣기 |
-| `ESC` | 목록 닫기 / 검색어 지우기 |
-| 우클릭 | 핀 고정 · 편집 · 태그 · 삭제 메뉴 |
-
----
-
-## 지원 환경
-
-- Windows 10 / 11
-- Linux — GNOME Wayland, X11
-
----
+| | |
+|---|---|
+| ![](clipiyagi2.png) | ![](clipiyagi3.png) |
 
 ## 다운로드
 
-[GitHub Releases](https://github.com/iyagicom/ClipIyagi-dev/releases) 에서 최신 버전을 받을 수 있습니다.
+**[⬇ 최신 버전 받기](https://github.com/iyagicom/ClipIyagi/releases/latest)**
 
----
+| 내 시스템 | 받을 파일 |
+|---|---|
+| Windows 10 / 11 | [Microsoft Store](https://apps.microsoft.com/detail/9N2SL0RVX6CN) |
+| Ubuntu 24.04 · 데비안 | **ubuntu24.04** 가 붙은 `.deb` |
+| Ubuntu 26.04 | **ubuntu26.04** 가 붙은 `.deb` |
+| 페도라 · openSUSE | `.rpm` |
+| 아치 · 만자로 | `.pkg.tar.zst` |
+| 그 밖의 리눅스 | `.AppImage`(설치 없이 실행) 또는 `.zip` |
+
+```bash
+sudo apt install ./clipiyagi_*_amd64.deb     # 우분투 / 데비안
+sudo dnf install ./clipiyagi-*.rpm           # 페도라
+sudo pacman -U clipiyagi-*.pkg.tar.zst       # 아치
+```
+
+리눅스에서 자동 붙여넣기는 X11·GNOME·KDE Plasma 에서 바로 됩니다(GNOME·KDE 는 처음 한 번 허용을 묻습니다). sway·Hyprland 같은 wlroots 계열은 `wtype` 이 깔려 있으면 그것을 씁니다.
 
 ## 라이선스
 
-Copyright © 2026 IYAGI INC. All rights reserved.
-
-실행 파일로만 배포됩니다. 소스 코드는 공개하지 않습니다.  
-개인 및 상업적 사용은 자유롭게 허용됩니다.  
-무단 재배포, 수정, 역공학은 금지됩니다.
-
----
-
-## 문의
-
-- Email: iyagicom@gmail.com
-- GitHub: https://github.com/iyagicom
+[라이선스](LICENSE) · [개인정보 처리방침](privacy-policy.md)

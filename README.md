@@ -1,125 +1,54 @@
-# ClipIyagi(클립이야기) v1.7.0
+# ClipIyagi
+
+**Never lose something you copied. A clipboard manager for Windows and Linux — text and images, one hotkey away.**
+
+[English](README.md) · [한국어](README_ko.md)
+
 ![ClipIyagi](clipiyagi1.png)
 
-A **lightweight, fast clipboard history manager** for Windows and Linux.
+## Why ClipIyagi?
 
-ClipIyagi automatically saves everything you copy and lets you quickly paste it back with a global shortcut — no matter which app you're in.
+- **Everything you copy is kept.** Text and images are recorded automatically — go back to the link you copied an hour ago.
+- **One hotkey, from anywhere.** `Ctrl+Shift+V` opens the list over whatever you're doing. Press `1`–`9` and it's pasted.
+- **It pastes for you.** Pick an item and it lands in the window you were typing in. Works in terminals too.
+- **Keep what matters on top.** Pin frequently used snippets, tag them, filter with `#tag`, edit them in place.
+- **Wayland without extra tools.** On GNOME and KDE Plasma auto-paste works with nothing else to install — no xdotool, no ydotool.
 
----
+## Features
 
-## ✨ Features
+- Automatic text and image history (100 / 300 / 500 / 1000 / unlimited)
+- Pin, edit, tag and delete items; real-time search
+- Global hotkey, number-key paste, auto-paste into the previous window
+- Choose `Ctrl+V` or `Ctrl+Shift+V` as the paste key
+- Hover preview for long text; emoji shown in color
+- Dark mode, font size, resizable window
+- System tray, start on login
 
-### Clipboard Management
-* **Auto-save** — automatically records copied text and images
-* **Pin items** — pin important clips to the top of the list (excluded from auto-cleanup)
-* **Edit items** — edit saved text content directly
-* **Tags / Categories** — assign tags to items and filter with `#tagname`
-* **Max history size** — choose 100 / 300 / 500 / 1000 / Unlimited
-
-### Productivity
-* **Global hotkey** — open the clipboard list from anywhere (`Ctrl+Shift+V` or `Ctrl+\``)
-* **Auto-paste** — automatically pastes into the previously focused window on selection
-* **Paste shortcut choice** — `Ctrl+V` (standard) or `Ctrl+Shift+V` (works in terminals too)
-* **Number shortcuts** — press `1–9` or `0` to instantly paste that item
-* **Real-time search** — filter clipboard history as you type
-* **Image preview** — hover over a thumbnail to see the full image
-* **Infinite scroll** — smoothly browse large histories
-* **Resizable window** — drag to resize to your preferred size
-
-### Appearance
-* **Dark mode** — toggle between light and dark themes
-* **Font size** — choose 9 / 10 / 12 / 14pt
-
-### System
-* **System tray** — always accessible from the tray icon
-* **Autostart** — launch automatically on login
-
----
-
-## 🎮 Keyboard Shortcuts
-
-| Key | Action |
+| | |
 |---|---|
-| Ctrl + Shift + V | Open clipboard list |
-| Ctrl + ` | Open clipboard list |
-| 1 – 9 / 0 | Instantly paste that numbered item |
-| ESC | Close list / clear search |
-| Right-click | Pin · Edit · Tag · Delete menu |
+| ![](clipiyagi2.png) | ![](clipiyagi3.png) |
 
----
+## Download
 
-## ⬇ Download
+**[⬇ Latest release](https://github.com/iyagicom/ClipIyagi/releases/latest)**
 
-### Windows
-Install from the Microsoft Store.
-(Store link coming soon)
-
-### Linux
-Download the binary from GitHub Releases.
+| Your system | File to pick |
+|---|---|
+| Windows 10 / 11 | [Microsoft Store](https://apps.microsoft.com/detail/9N2SL0RVX6CN) |
+| Ubuntu 24.04 · Debian | `.deb` marked **ubuntu24.04** |
+| Ubuntu 26.04 | `.deb` marked **ubuntu26.04** |
+| Fedora · openSUSE | `.rpm` |
+| Arch · Manjaro | `.pkg.tar.zst` |
+| Any other Linux | `.AppImage` (run without installing) or `.zip` |
 
 ```bash
-chmod +x ClipIyagi
-./ClipIyagi
+sudo apt install ./clipiyagi_*_amd64.deb     # Ubuntu / Debian
+sudo dnf install ./clipiyagi-*.rpm           # Fedora
+sudo pacman -U clipiyagi-*.pkg.tar.zst       # Arch
 ```
 
----
+On Linux, auto-paste works out of the box on X11, GNOME and KDE Plasma (the first time, GNOME/KDE ask once for permission). On sway, Hyprland and other wlroots desktops it uses `wtype` if installed.
 
-## 🐧 Linux Setup
+## License
 
-### Wayland (GNOME) — for auto-paste support
-
-```bash
-# Install packages
-sudo apt install ydotool wl-clipboard
-
-# Fix uinput permissions (once)
-echo 'KERNEL=="uinput", GROUP="input", MODE="0660"' | sudo tee /etc/udev/rules.d/60-uinput.rules
-sudo udevadm control --reload-rules && sudo udevadm trigger
-
-# Register ydotoold as a user service (recommended)
-mkdir -p ~/.config/systemd/user
-cat > ~/.config/systemd/user/ydotoold.service << 'EOF'
-[Unit]
-Description=ydotool daemon
-[Service]
-ExecStart=/usr/bin/ydotoold
-Restart=always
-[Install]
-WantedBy=default.target
-EOF
-systemctl --user enable --now ydotoold.service
-```
-
-### X11
-
-```bash
-sudo apt install xdotool
-```
-
----
-
-## 🖥 Supported Platforms
-
-* Windows 10 / 11
-* Linux (GNOME Wayland / X11)
-
----
-
-## 👤 Author
-
-IYAGI INC
-Email: [iyagicom@gmail.com](mailto:iyagicom@gmail.com)
-GitHub: https://github.com/iyagicom
-
----
-
-## 📜 License
-Copyright (c) 2026 IYAGI INC. All rights reserved.
-
-This software is provided as executable files only. Source code is not publicly available.
-
-Linux version:
-You may use, install, package, and redistribute this software freely for any purpose, including personal, commercial, educational, governmental, and organizational use.
-
-Windows version:
-Distributed through the Microsoft Store. Usage and licensing are managed through the MS Store.
+[License](LICENSE) · [Privacy policy](privacy-policy.md)
